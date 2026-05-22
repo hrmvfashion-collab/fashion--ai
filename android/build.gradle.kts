@@ -23,7 +23,7 @@ tasks.register<Delete>("clean") {
     delete(rootProject.layout.buildDirectory)
 }
 
-// Add this new configuration block for Java/Kotlin compatibility
+// Update this block to use new compilerOptions syntax
 subprojects {
     afterEvaluate {
         if (project.plugins.hasPlugin("com.android.application") || 
@@ -36,9 +36,10 @@ subprojects {
                 }
             }
             
+            // Use new compilerOptions instead of kotlinOptions
             project.tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-                kotlinOptions {
-                    jvmTarget = "17"
+                compilerOptions {
+                    jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
                 }
             }
         }
