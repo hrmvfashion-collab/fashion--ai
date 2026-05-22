@@ -24,7 +24,7 @@ jobs:
       with:
         flutter-version: '3.24.0'
         channel: 'stable'
-        
+
     - name: Install dependencies
       run: flutter pub get
 
@@ -32,7 +32,7 @@ jobs:
       run: flutter build apk --release
 
     - name: Upload APK
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v3
       with:
         name: flutter-app-apk
         path: build/app/outputs/flutter-apk/app-release.apk
