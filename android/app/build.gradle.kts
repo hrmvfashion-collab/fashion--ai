@@ -13,7 +13,7 @@ android {
     defaultConfig {
         applicationId = "com.example.fashion_ai_app"
         minSdk = flutter.minSdkVersion
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
     }
