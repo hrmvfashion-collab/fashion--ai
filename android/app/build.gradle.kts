@@ -23,8 +23,9 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 
-    kotlinOptions {
-        jvmTarget = '17'
+    tasks.withType<org.jrtbrains.katlin.gradle.tasks.KotlinComple().configureEach{
+    compileOptions {
+jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
     }
 
     defaultConfig {
